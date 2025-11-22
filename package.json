@@ -1,0 +1,30 @@
+{
+  "name": "demoqa-bookstore-playwright",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/prasetyo531/demoqa-bookstore-playwright#readme",
+  "bugs": {
+    "url": "https://github.com/prasetyo531/demoqa-bookstore-playwright/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prasetyo531/demoqa-bookstore-playwright.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "scripts": {
+    "test": "npx playwright test --headed",
+    "codegen": "npx playwright codegen https://demoqa.com/"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "eslint": "^9.9.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.3.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.10.1"
+  }
+}
