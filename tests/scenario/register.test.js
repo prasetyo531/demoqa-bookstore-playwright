@@ -4,7 +4,7 @@ import { registerDataSet } from "../data/register.data";
 test.describe("@pipeline - User Registration Flow", () => {
   test("TC-001: As a guest, I should successfully register", async ({
     homePage,
-    onboardingPage,
+    onboardingPage
   }) => {
     await homePage.navigateLogin();
     await onboardingPage.clickNewUser();

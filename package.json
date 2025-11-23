@@ -15,7 +15,10 @@
   "type": "module",
   "scripts": {
     "test": "npx playwright test --headed",
-    "codegen": "npx playwright codegen https://demoqa.com/"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "dotenv": "^16.5.0",

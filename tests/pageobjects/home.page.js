@@ -18,8 +18,7 @@ export class HomePage {
     this.btnSearchIcon = page.locator("#basic-addon2 > span");
 
     // dynamic row result locator (text depends on search)
-    this.sectionSearchResult = (text) =>
-      page.getByRole("rowgroup").filter({ hasText: text });
+    this.sectionSearchResult = (text) => page.getByRole("rowgroup").filter({ hasText: text });
   }
 
   async navigate(string) {
@@ -46,7 +45,7 @@ export class HomePage {
     await this.btnSearchIcon.click();
 
     await this.sectionSearchResult(text).waitFor({
-      state: "visible",
+      state: "visible"
     });
   }
 }

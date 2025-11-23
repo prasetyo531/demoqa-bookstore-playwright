@@ -6,5 +6,5 @@ import { OnboardingPage } from "../pageobjects/onboarding.page";
 /** @type {import('@playwright/test').TestType<Fixtures, {}>} */
 export const test = base.extend({
   homePage: async ({ page }, use) => use(new HomePage(page)),
-  onboardingPage: async ({ page }, use) => use(new OnboardingPage(page)),
+  onboardingPage: async ({ page }, use) => use(new OnboardingPage(page))
 });

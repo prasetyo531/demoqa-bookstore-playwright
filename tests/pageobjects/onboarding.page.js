@@ -19,7 +19,7 @@ export class OnboardingPage {
     // CAPTCHA IFRAME
     this.iframeCaptcha = page.frameLocator('iframe[name^="a-"]');
     this.captchaCheckbox = this.iframeCaptcha.getByRole("checkbox", {
-      name: "I'm not a robot",
+      name: "I'm not a robot"
     });
   }
 
@@ -52,6 +52,7 @@ export class OnboardingPage {
   }
 
   async clickRegister() {
+    await this.page.waitForTimeout(2000);
     await this.page.once("dialog", async (dialog) => {
       expect(dialog.message()).toBe("User Register Successfully.");
       await dialog.accept();

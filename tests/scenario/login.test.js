@@ -2,10 +2,7 @@ import { test } from "../fixtures/setup.page";
 import { loginDataSet } from "../data/login.data";
 
 test.describe("@pipeline - User Login Flow", () => {
-  test("TC-002: As a guest, I should successfully login", async ({
-    homePage,
-    onboardingPage,
-  }) => {
+  test("TC-002: As a guest, I should successfully login", async ({ homePage, onboardingPage }) => {
     await homePage.navigate("/login");
 
     await onboardingPage.fillUsername(loginDataSet.validUser.username);
