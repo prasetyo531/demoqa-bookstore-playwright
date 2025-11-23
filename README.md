@@ -46,7 +46,7 @@ TODO: Describe and show how to build your code and run the tests.
 1. cd
 2. npm install              # check package.json
 3. cp .env.example .env
-4. npm run test:qa
+4. npm run test
 ```
 
 # Test Cases
