@@ -1,20 +1,20 @@
-import { expect } from "@playwright/test";
-import { test } from "../fixtures/setup.page.js";
+import { test } from "../fixtures/setup.page";
+import { registerDataSet } from "../data/register.data";
 
-test("User can register new account", async ({ homePage, onboardingPage }) => {
-  await homePage.navigateLogin();
-  await onboardingPage.clickNewUser();
+test.describe("@pipeline - User Registration Flow", () => {
+  test("TC-001: As a guest, I should successfully register", async ({
+    homePage,
+    onboardingPage,
+  }) => {
+    await homePage.navigateLogin();
+    await onboardingPage.clickNewUser();
 
-  await onboardingPage.fillFirstName("admin");
-  await onboardingPage.fillLastName("admin");
-  await onboardingPage.fillUsername("adminqa1");
-  await onboardingPage.fillPassword("Camelcase01!");
+    await onboardingPage.fillFirstName(registerDataSet.validUser.firstName);
+    await onboardingPage.fillLastName(registerDataSet.validUser.lastName);
+    await onboardingPage.fillUsername(registerDataSet.validUser.username);
+    await onboardingPage.fillPassword(registerDataSet.validUser.password);
 
-  // CAPTCHA (Kalau fail di demoqa, itu normal)
-  await onboardingPage.solveCaptcha();
-
-  await onboardingPage.clickRegister();
-
-  // Optional validation
-  await expect(onboardingPage.page).toHaveURL(/login/);
+    await onboardingPage.solveCaptcha();
+    await onboardingPage.clickRegister();
+  });
 });

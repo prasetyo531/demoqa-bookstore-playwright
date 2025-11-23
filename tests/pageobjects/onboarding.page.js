@@ -52,11 +52,11 @@ export class OnboardingPage {
   }
 
   async clickRegister() {
-    this.page.once("dialog", (dialog) => {
-      console.log(`Dialog message: ${dialog.message()}`);
-      dialog.dismiss().catch(() => {});
+    await this.page.once("dialog", async (dialog) => {
+      expect(dialog.message()).toBe("User Register Successfully.");
+      await dialog.accept();
     });
 
-    await this.btnRegister.click();
+    await this.page.getByRole("button", { name: "Register" }).click();
   }
 }
