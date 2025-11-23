@@ -2,7 +2,7 @@ export const registerDataSet = {
   validUser: {
     firstName: "admin",
     lastName: "admin",
-    username: "adminqa4",
+    username: "adminqa5",
     password: "Camelcase01!",
   },
   invalidUser: {
